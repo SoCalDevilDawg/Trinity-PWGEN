@@ -6,6 +6,7 @@
   "rules": {
     "no-console": "off",
     "no-restricted-syntax": "off",
+    "no-plusplus": "off",
     "import/no-extraneous-dependencies": "off",
     "comma-dangle": "off",
     "max-len": ["error", 120],
@@ -14,5 +15,8 @@
       "printWidth": 120
     }]
   },
-  "plugins": ["prettier"]
+  "plugins": ["prettier"],
+  "env": {
+    "browser": true
+  }
 }

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "niobium-password-gen",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Password generator that generates passwords with varying lengths and complexity",
 
   "icons": {
@@ -10,6 +10,8 @@
     "48": "icons/icon-48.png"
   },
 
+  "permissions": ["storage"],
+
   "browser_action": {
     "browser_style": true,
     "default_popup": "popup/passwords.html",
@@ -17,6 +19,12 @@
       "16": "icons/icon-16.png",
       "32": "icons/icon-32.png",
       "48": "icons/icon-48.png"
+    }
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "niobium-password-gen@robblue2x"
     }
   }
 }

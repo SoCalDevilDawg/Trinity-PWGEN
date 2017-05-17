@@ -3,3 +3,4 @@
 *.crx
 *.xpi
 node_modules
+icons/*.png
