@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "niobium-password-gen",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Password generator that generates passwords with varying lengths and complexity",
 
   "icons": {

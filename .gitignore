@@ -4,3 +4,4 @@
 *.xpi
 node_modules
 icons/*.png
+package-lock.json

@@ -13,10 +13,11 @@ const poolNames = {
   sym: 'Alpha-numeric and symbols'
 };
 
-const createDiv = ({ innerHTML, innerText, children }) => {
+const createDiv = ({ innerHTML, innerText, children, className }) => {
   const a = document.createElement('div');
   if (innerText) a.innerText = innerText;
   if (innerHTML) a.innerHTML = innerHTML;
+  if (className) a.className = className;
   if (children) children.forEach(i => a.appendChild(i));
   return a;
 };
@@ -44,7 +45,7 @@ const copyPassword = (pool, len) => () => {
   const basic = createDiv({ innerHTML: '<b>Basic</b>' });
   app.appendChild(basic);
   for (const c of ['alpha', 'num', 'sym']) {
-    basic.appendChild(createDiv({ innerText: poolNames[c] }));
+    basic.appendChild(createDiv({ innerText: poolNames[c], className: 'padtop' }));
     const count = document.createElement('div');
     for (let i = 8; i <= 32; i += 4) {
       const e = document.createElement('button');
@@ -58,7 +59,7 @@ const copyPassword = (pool, len) => () => {
 })();
 
 (() => {
-  const advanced = createDiv({ innerHTML: '<b>Advanced</b>' });
+  const advanced = createDiv({ innerHTML: '<b>Advanced</b>', className: 'padtop' });
   advanced.style.marginTop = '15px';
   app.appendChild(advanced);
 
@@ -78,7 +79,6 @@ const copyPassword = (pool, len) => () => {
   range.min = 8;
   range.max = 64;
   range.title = `The length of the generated password, you can click or drag to change.`;
-  range.style.width = '95%';
   advanced.appendChild(createDiv({ children: [range] }));
   rangeValue.innerText = `Length (${range.value})`;
 
@@ -105,6 +105,7 @@ const copyPassword = (pool, len) => () => {
   browser.storage.sync.get('advancedLength').then(res => {
     range.value = res.advancedLength;
     rangeValue.innerText = `Length (${range.value})`;
+    out.value = genPassword(pool.value, range.value);
   });
 
   pool.oninput = () => {
@@ -123,7 +124,3 @@ const copyPassword = (pool, len) => () => {
     window.close();
   };
 })();
-
-/*
-
-*/
