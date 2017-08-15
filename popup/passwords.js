@@ -1,5 +1,7 @@
 /* globals browser */
 
+const t = browser.i18n.getMessage;
+
 const app = document.getElementById('app');
 
 const pools = {
@@ -8,9 +10,9 @@ const pools = {
   sym: 'abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789!£$%^&*()_+-{}:@?[];#,.'
 };
 const poolNames = {
-  alpha: 'Alpha',
-  num: 'Alpha-numeric',
-  sym: 'Alpha-numeric and symbols'
+  alpha: t('Alpha'),
+  num: t('Alpha-numeric'),
+  sym: t('Alpha-numeric and symbols')
 };
 
 const createDiv = ({ innerHTML, innerText, children, className }) => {
@@ -42,16 +44,16 @@ const copyPassword = (pool, len) => () => {
   window.close();
 };
 (() => {
-  const basic = createDiv({ innerHTML: '<b>Basic</b>' });
+  const basic = createDiv({ innerHTML: `<b>${t('Basic')}</b>` });
   app.appendChild(basic);
   for (const c of ['alpha', 'num', 'sym']) {
-    basic.appendChild(createDiv({ innerText: poolNames[c], className: 'padtop' }));
+    basic.appendChild(createDiv({ innerText: t(poolNames[c]), className: 'padtop' }));
     const count = document.createElement('div');
     for (let i = 8; i <= 32; i += 4) {
       const e = document.createElement('button');
       e.innerText = i;
       e.onclick = copyPassword(pools[c], i);
-      e.title = `Click here to generate a password ${i} characters long, using ${poolNames[c]} characters`;
+      e.title = t('buttonAction', [i, t(poolNames[c])]);
       count.appendChild(e);
     }
     basic.appendChild(count);
@@ -59,16 +61,16 @@ const copyPassword = (pool, len) => () => {
 })();
 
 (() => {
-  const advanced = createDiv({ innerHTML: '<b>Advanced</b>', className: 'padtop' });
+  const advanced = createDiv({ innerHTML: `<b>${t('Advanced')}</b>`, className: 'padtop' });
   advanced.style.marginTop = '15px';
   app.appendChild(advanced);
 
-  advanced.appendChild(createDiv({ innerText: 'Pool' }));
+  advanced.appendChild(createDiv({ innerText: t('Pool') }));
   const pool = document.createElement('textarea');
   pool.cols = 30;
   pool.rows = 3;
   pool.value = pools.sym;
-  pool.title = 'The characters used to create the password, you can add or remove characters';
+  pool.title = t('poolTitle');
   advanced.appendChild(createDiv({ children: [pool] }));
 
   const rangeValue = createDiv({});
@@ -78,21 +80,21 @@ const copyPassword = (pool, len) => () => {
   range.value = 32;
   range.min = 8;
   range.max = 64;
-  range.title = `The length of the generated password, you can click or drag to change.`;
+  range.title = t('rangeTitle');
   advanced.appendChild(createDiv({ children: [range] }));
-  rangeValue.innerText = `Length (${range.value})`;
+  rangeValue.innerText = t('length', [range.value]);
 
-  advanced.appendChild(createDiv({ innerText: 'Output' }));
+  advanced.appendChild(createDiv({ innerText: t('Output') }));
   const out = document.createElement('textarea');
   out.value = genPassword(pool.value, range.value);
   out.cols = 30;
   out.rows = 3;
-  out.title = 'The generated password. You can edit the password before copying it';
+  out.title = t('outTitle');
   advanced.appendChild(createDiv({ children: [out] }));
 
   const copy = document.createElement('button');
-  copy.innerText = 'Copy';
-  copy.title = 'Copy the advanced generated password to the clipboard';
+  copy.innerText = t('Copy');
+  copy.title = t('copyTitle');
   advanced.appendChild(copy);
 
   browser.storage.sync.get('advancedPool').then(res => {
@@ -104,7 +106,7 @@ const copyPassword = (pool, len) => () => {
   });
   browser.storage.sync.get('advancedLength').then(res => {
     range.value = res.advancedLength;
-    rangeValue.innerText = `Length (${range.value})`;
+    rangeValue.innerText = t('length', [range.value]);
     out.value = genPassword(pool.value, range.value);
   });
 
@@ -114,7 +116,7 @@ const copyPassword = (pool, len) => () => {
   };
   range.oninput = () => {
     out.value = genPassword(pool.value, range.value);
-    rangeValue.innerText = `Length (${range.value})`;
+    rangeValue.innerText = t('length', [range.value]);
     browser.storage.sync.set({ advancedLength: range.value });
   };
 

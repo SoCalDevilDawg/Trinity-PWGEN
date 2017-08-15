@@ -1,0 +1,75 @@
+{
+  "extensionName": {
+    "message": "niobium-password-gen",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Password generator that generates passwords with varying lengths and complexity",
+    "description": "Description of the extension."
+  },
+
+  "Alpha": {
+    "message": "Alpha"
+  },
+  "Alpha-numeric": {
+    "message": "Alpha-numeric"
+  },
+  "Alpha-numeric and symbols": {
+    "message": "Alpha-numeric and symbols"
+  },
+
+  "Basic": {
+    "message": "Basic"
+  },
+  "Advanced": {
+    "message": "Advanced"
+  },
+  "Pool": {
+    "message": "Pool"
+  },
+  "Copy": {
+    "message": "Copy"
+  },
+  "Output": {
+    "message": "Output"
+  },
+
+  "buttonAction": {
+    "message": "Click here to generate a password $LENGTH$ characters long, using $SET$ characters",
+    "description": "Tells the user what each button does",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "10"
+      },
+      "set": {
+        "content": "$2",
+        "example": "Alpha-numeric"
+      }
+    }
+  },
+
+  "poolTitle": {
+    "message": "The characters used to create the password, you can add or remove characters"
+  },
+  "rangeTitle": {
+    "message": "The length of the generated password, you can click or drag to change"
+  },
+  "outTitle": {
+    "message": "The generated password. You can edit the password before copying it"
+  },
+  "copyTitle": {
+    "message": "Copy the advanced generated password to the clipboard"
+  },
+
+  "length": {
+    "message": "Length $LEN$",
+    "placeholders": {
+      "len": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  }
+}
