@@ -1,0 +1,75 @@
+{
+  "extensionName": {
+    "message": "Niobium Password Generator",
+    "description": "Name of the extension."
+  },
+
+  "extensionDescription": {
+    "message": "Generátor hesel s proměnnou délkou a složitostí",
+    "description": "Description of the extension."
+  },
+
+  "Alpha": {
+    "message": "Pouze písmena"
+  },
+  "Alpha-numeric": {
+    "message": "Písmena a čísla"
+  },
+  "Alpha-numeric and symbols": {
+    "message": "Písmena, čísla a další znaky"
+  },
+
+  "Basic": {
+    "message": "Základní"
+  },
+  "Advanced": {
+    "message": "Rozšířené"
+  },
+  "Pool": {
+    "message": "Znaky"
+  },
+  "Copy": {
+    "message": "Zkopírovat"
+  },
+  "Output": {
+    "message": "Výstup"
+  },
+
+  "buttonAction": {
+    "message": "Klepněte zde pro vygenerování hesla s délkou $LENGTH$ znaků ze sady $SET$",
+    "description": "Tells the user what each button does",
+    "placeholders": {
+      "length": {
+        "content": "$1",
+        "example": "10"
+      },
+      "set": {
+        "content": "$2",
+        "example": "Alpha-numeric"
+      }
+    }
+  },
+
+  "poolTitle": {
+    "message": "Znaky použité pro vytvoření hesla. Můžete některé odebrat nebo přidat vlastní."
+  },
+  "rangeTitle": {
+    "message": "Délka vygenerovaného hesla. Lze změnit kliknutím nebo tažením myší."
+  },
+  "outTitle": {
+    "message": "Vygenerované heslo. Před zkopírováním ho můžete upravit."
+  },
+  "copyTitle": {
+    "message": "Zkopíruje vygenerované heslo do schránky"
+  },
+
+  "length": {
+    "message": "Délka $LEN$",
+    "placeholders": {
+      "len": {
+        "content": "$1",
+        "example": "10"
+      }
+    }
+  }
+}
