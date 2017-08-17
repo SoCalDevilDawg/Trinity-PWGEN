@@ -1,15 +1,16 @@
 stages:
   - build
 
-image: registry.gitlab.com/robblue2x/niobium-password-gen
+image: node:8
 
 
 build:
   stage: build
   tags: [docker]
   script:
-    - ./build-icons.sh
-    - ./build-zip.sh
+    - npm i
+    - npm run lint
+    - npm run zip
   artifacts:
     expire_in: 1 day
     paths:

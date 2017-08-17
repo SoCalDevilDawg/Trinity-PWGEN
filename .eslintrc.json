@@ -4,6 +4,8 @@
     "airbnb", "prettier"
   ],
   "rules": {
+    "react/jsx-wrap-multilines":"off",
+    "react/prop-types": "off",
     "no-console": "off",
     "no-restricted-syntax": "off",
     "no-plusplus": "off",

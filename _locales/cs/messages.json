@@ -9,30 +9,33 @@
     "description": "Description of the extension."
   },
 
-  "Alpha": {
+  "alpha": {
     "message": "Pouze písmena"
   },
-  "Alpha-numeric": {
+  "num": {
     "message": "Písmena a čísla"
   },
-  "Alpha-numeric and symbols": {
+  "sym": {
     "message": "Písmena, čísla a další znaky"
   },
 
-  "Basic": {
+  "basic": {
     "message": "Základní"
   },
-  "Advanced": {
+  "advanced": {
     "message": "Rozšířené"
   },
-  "Pool": {
+  "pool": {
     "message": "Znaky"
   },
-  "Copy": {
+  "copy": {
     "message": "Zkopírovat"
   },
-  "Output": {
+  "output": {
     "message": "Výstup"
+  },
+  "generatePassword": {
+    "message": "Generovat hesla"
   },
 
   "buttonAction": {

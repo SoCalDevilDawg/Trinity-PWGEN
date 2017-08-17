@@ -9,30 +9,33 @@
     "description": "Description of the extension."
   },
 
-  "Alpha": {
+  "alpha": {
     "message": "Alpha"
   },
-  "Alpha-numeric": {
+  "num": {
     "message": "Alpha-numeric"
   },
-  "Alpha-numeric and symbols": {
+  "sym": {
     "message": "Alpha-numeric and symbols"
   },
 
-  "Basic": {
+  "basic": {
     "message": "Basic"
   },
-  "Advanced": {
+  "advanced": {
     "message": "Advanced"
   },
-  "Pool": {
+  "pool": {
     "message": "Pool"
   },
-  "Copy": {
+  "copy": {
     "message": "Copy"
   },
-  "Output": {
+  "output": {
     "message": "Output"
+  },
+  "generatePassword": {
+    "message": "Generate password"
   },
 
   "buttonAction": {
