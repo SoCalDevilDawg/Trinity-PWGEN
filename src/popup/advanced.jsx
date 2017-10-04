@@ -6,11 +6,9 @@ import copy from '../lib/copy';
 
 const t = browser.i18n.getMessage;
 
-const render = ({ pool, length, output }, { onPoolChange, onLengthChange, onOutputChange }) =>
+const render = ({ pool, length, output }, { onPoolChange, onLengthChange, onOutputChange }) => (
   <div>
-    <b>
-      {t('advanced')}
-    </b>
+    <b>{t('advanced')}</b>
     <div>
       {t('pool')}
       <textarea value={pool} cols={30} rows={3} onChange={e => onPoolChange(e.target.value)} title={t('poolTitle')} />
@@ -47,6 +45,7 @@ const render = ({ pool, length, output }, { onPoolChange, onLengthChange, onOutp
         {t('copy')}
       </button>
     </div>
-  </div>;
+  </div>
+);
 
 export default render;

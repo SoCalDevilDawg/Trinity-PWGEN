@@ -29,10 +29,13 @@
     "gulp-svg2png": "^2.0.2",
     "gulp-zip": "^4.0.0",
     "prettier": "^1.1.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "remark-html": "^6.0.1",
     "remark-lint": "^6.0.0",
     "webpack": "^3.5.4"
+  },
+  "dependencies": {
+    "web-ext": "^2.0.0"
   }
 }

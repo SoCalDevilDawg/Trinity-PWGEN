@@ -10,8 +10,12 @@ const render = () => {
   for (const c of ['alpha', 'num', 'sym']) {
     const buttons = [];
     for (let i = 8; i <= 32; i += 4) {
+      const onClick = () => {
+        copy(generate(pools[c], i));
+        window.close();
+      };
       buttons.push(
-        <button onClick={() => copy(generate(pools[c], i))} title={t('buttonAction', [i, t(c)])}>
+        <button onClick={onClick} title={t('buttonAction', [i, t(c)])}>
           {i}
         </button>
       );
@@ -19,18 +23,14 @@ const render = () => {
     basic.push(
       <div>
         {t(c)}
-        <div>
-          {buttons}
-        </div>
+        <div>{buttons}</div>
       </div>
     );
   }
 
   return (
     <div>
-      <b>
-        {t('basic')}
-      </b>
+      <b>{t('basic')}</b>
       {basic}
     </div>
   );

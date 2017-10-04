@@ -35,7 +35,12 @@ const webpackConfig = {
   ]
 };
 
-gulp.task('lint:gulp', () => gulp.src(['./gulpfile.js']).pipe(eslint({ fix: true })).pipe(gulp.dest('./')));
+gulp.task('lint:gulp', () =>
+  gulp
+    .src(['./gulpfile.js'])
+    .pipe(eslint({ fix: true }))
+    .pipe(gulp.dest('./'))
+);
 
 gulp.task('lint:js', () =>
   gulp
@@ -122,7 +127,10 @@ gulp.task('icons', ['clean'], () => {
 });
 
 gulp.task('zip', ['build'], () =>
-  gulp.src('dist/**/*').pipe(zip('niobium-password-gen.zip')).pipe(gulp.dest(__dirname))
+  gulp
+    .src('dist/**/*')
+    .pipe(zip('niobium-password-gen.zip'))
+    .pipe(gulp.dest(__dirname))
 );
 
 gulp.task('webpack', ['popup', 'content', 'background']);
