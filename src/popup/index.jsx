@@ -41,7 +41,7 @@ flip = () => {
   ReactDOM.render(
     <div>
       {basic()}
-      <div className={'padtop'} />
+      <div className="padtop" />
       {advanced(advancedData, advancedFuncs)}
     </div>,
     document.getElementById('app')

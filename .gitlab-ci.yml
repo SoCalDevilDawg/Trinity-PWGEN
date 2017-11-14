@@ -1,5 +1,6 @@
 stages:
   - build
+  - release
 
 image: node:8
 
@@ -7,11 +8,37 @@ image: node:8
 build:
   stage: build
   tags: [docker]
+  except: [master,tags]
   script:
     - npm i
+    - npm run icons
+    - npm run webpack
     - npm run lint
-    - npm run zip
+    - npm run build
+
+
+release:
+  stage: release
+  tags: [docker]
+  only: [master]
+  except: [tags]
+  script:
+    - npm i -g semantic-release-gitlab
+    - semantic-release-gitlab
+
+
+package:
+  stage: release
+  tags: [docker]
+  only: [tags]
+  script:
+    - sed -i manifest.json -e "s#0\.0\.0#$CI_COMMIT_TAG#g"
+    - npm i
+    - npm run icons
+    - npm run webpack
+    - npm run lint
+    - npm run build
+    - mv web-ext-artifacts/*.zip .
   artifacts:
-    expire_in: 1 day
     paths:
-    - niobium-password-gen.zip
+    - "*.zip"

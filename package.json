@@ -1,12 +1,20 @@
 {
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/robblue2x/niobium-password-gen.git"
+  },
   "scripts": {
-    "lint": "gulp lint",
-    "build": "gulp build",
-    "zip": "gulp zip"
+    "clean": "rm -rf icons web-ext-artifacts dist",
+    "icons": "node tasks/build-icons.js",
+    "fix-lint": "eslint --fix gulpfile.js hacks.js",
+    "lint": "eslint --ext .jsx src && web-ext lint -i src",
+    "webpack": "webpack --config webpack.config.js",
+    "build": "web-ext build --overwrite-dest -i tasks src test package.json package-lock.json webpack.config.js",
+    "run": "web-ext run --bc --firefox=/usr/bin/firefox-trunk --start-url test/index.html"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
-    "babel-loader": "^7.1.0",
+    "babel-loader": "^7.1.2",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -14,28 +22,20 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-config-prettier": "^1.7.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-prettier": "^2.0.1",
-    "eslint-plugin-react": "^6.10.3",
-    "fs-extra": "^4.0.1",
-    "gulp": "^3.9.1",
-    "gulp-eslint": "^4.0.0",
-    "gulp-remark": "^4.0.2",
-    "gulp-rename": "^1.2.2",
-    "gulp-svg2png": "^2.0.2",
-    "gulp-zip": "^4.0.0",
-    "prettier": "^1.1.0",
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.2.0",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "prettier": "^1.8.2",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "remark-html": "^6.0.1",
-    "remark-lint": "^6.0.0",
-    "webpack": "^3.5.4"
-  },
-  "dependencies": {
-    "web-ext": "^2.0.0"
+    "sharp": "^0.18.4",
+    "web-ext": "^2.2.2",
+    "webpack": "^3.8.1"
   }
 }

@@ -1,8 +1,14 @@
 /* globals browser */
 
-import { generate } from '../lib/passwd';
+import { pools, generate } from '../lib/passwd';
 
 const t = browser.i18n.getMessage;
+
+let advancedData = {
+  pool: pools.sym,
+  length: 32,
+  output: ''
+};
 
 browser.contextMenus.create({
   id: 'generatePassword-EEzgglgf',
@@ -13,7 +19,8 @@ browser.contextMenus.create({
 browser.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === 'generatePassword-EEzgglgf') {
     browser.storage.sync.get('advancedData').then(res => {
-      const { pool, length } = res.advancedData;
+      advancedData = res.advancedData ? res.advancedData : advancedData;
+      const { pool, length } = advancedData;
       const password = generate(pool, length);
       browser.tabs.sendMessage(tab.id, { password });
     });
