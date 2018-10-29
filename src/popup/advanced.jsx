@@ -41,6 +41,7 @@ const render = ({ pool, length, output }, { onPoolChange, onLengthChange, onOutp
           window.close();
         }}
         title={t('copyTitle')}
+        type="button"
       >
         {t('copy')}
       </button>

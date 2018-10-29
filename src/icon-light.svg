@@ -15,8 +15,8 @@
    viewBox="0 0 12.7 12.7"
    version="1.1"
    id="svg8"
-   sodipodi:docname="icon.svg"
-   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="icon-light.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    inkscape:export-filename="/home/rob/projects/niobium-password-gen/icons/icon-48.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
@@ -122,17 +122,17 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="14.156867"
-     inkscape:cx="28.469464"
+     inkscape:cx="5.5124076"
      inkscape:cy="27.559143"
      inkscape:document-units="mm"
      inkscape:current-layer="text4578"
      showgrid="false"
      units="px"
-     inkscape:window-width="3835"
-     inkscape:window-height="2104"
-     inkscape:window-x="5"
-     inkscape:window-y="0"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="2497"
+     inkscape:window-height="1525"
+     inkscape:window-x="270"
+     inkscape:window-y="422"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -141,7 +141,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -155,7 +155,7 @@
        style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        id="text4578">
       <path
-         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#080808;stroke-width:0.14782599;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
+         style="opacity:1;fill:#b3b3b3;fill-opacity:1;stroke:none;stroke-width:0.34800001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:normal"
          d="m 6.35,284.39864 c -2.9330388,0.002 -5.3260697,2.43136 -5.38416741,5.46685 -0.17408106,0.0697 -0.2966227,0.23867 -0.2966227,0.43821 v 6.12426 c 0,0.262 0.21083976,0.47336 0.47283931,0.47336 H 11.557951 c 0.261999,0 0.472839,-0.21136 0.472839,-0.47336 v -6.12426 c 0,-0.20011 -0.123293,-0.36944 -0.298173,-0.43873 -0.05835,-3.03466 -2.4503714,-5.46388 -5.382617,-5.46633 z m 0,2.46031 c 1.6644019,9.3e-4 3.034448,1.30932 3.1119548,2.97192 H 3.2401124 c 0.077469,-1.6618 1.4462855,-2.96989 3.1098876,-2.97192 z"
          id="path6094"
          inkscape:connector-curvature="0"

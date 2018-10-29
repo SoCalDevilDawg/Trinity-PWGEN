@@ -1,9 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: {
     popup: './src/popup/index.jsx',
     background: './src/background/index.js',
@@ -11,15 +11,11 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'stage-0'],
-          plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy']
-        }
+        loader: 'babel-loader'
       }
     ]
   },
@@ -35,11 +31,7 @@ module.exports = {
         from: path.join(__dirname, 'src', 'popup', 'index.css'),
         to: path.join(__dirname, 'dist')
       }
-    ]),
-    new webpack.optimize.UglifyJsPlugin({
-      comments: false,
-      sourceMap: false
-    })
+    ])
   ],
 
   resolve: {

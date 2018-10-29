@@ -15,7 +15,7 @@ const render = () => {
         window.close();
       };
       buttons.push(
-        <button onClick={onClick} title={t('buttonAction', [i, t(c)])}>
+        <button onClick={onClick} title={t('buttonAction', [i, t(c)])} type="button">
           {i}
         </button>
       );
